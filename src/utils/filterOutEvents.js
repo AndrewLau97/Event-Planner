@@ -1,7 +1,7 @@
 import checkAttendingAmount from "../hooks/useCheckAttendingAmount";
 
 async function filterOutEvents(events,setEvents,normal) {
-   async function checkCapacity() {
+  async function checkCapacity() {
     const results = await Promise.all(
       events.map(async (event) => {
         const result = await checkAttendingAmount(event.id, event.maxCapacity);
@@ -13,10 +13,11 @@ async function filterOutEvents(events,setEvents,normal) {
   const newEvents=await checkCapacity()
   const filterEvents = newEvents.filter((event) => 
     new Date(event.date)>=new Date()
-  );
-  if(normal){
-    setEvents(filterEvents)
-  }else{
+);
+if(normal){
+  console.log(filterEvents)
+  setEvents(filterEvents)
+}else{
     setEvents(newEvents)
   }
 }

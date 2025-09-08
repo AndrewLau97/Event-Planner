@@ -299,7 +299,6 @@ const AllEventsPage = () => {
   function goToEventPage(event) {
     navigate("/eventPage", { state: { event, edit: false } });
   }
-
   return (
     <>
       <div className="text-charcoal py-10 min-h-212">
@@ -509,9 +508,9 @@ const AllEventsPage = () => {
                 <EventCard event={event} />
               </div>
               <div className="flex justify-end">
-                {!eventAttendees.filter(
-                  (attending) => attending.eventId === event.id
-                ).length && (
+                {(!eventAttendees.filter(
+                  (attending) => {return attending.eventId === event.id&&attending.userId===userId}
+                ).length) && (
                   <button
                     className="border-1 border-border px-2 rounded-2xl bg-linear-to-r from-blue-300 to-purple-300 w-full py-2 hover:cursor-pointer hover:shadow-md"
                     onClick={() => {

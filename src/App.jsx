@@ -131,7 +131,7 @@ function App() {
                 path="/loginPage"
                 element={
                   <PageWrapper>
-                    !session ? (
+                    {!session ? (
                     <div
                       id="login"
                       className="border-1 flex justify-center bg-red-100"
@@ -168,7 +168,7 @@ function App() {
                       </div>
                     </div>
                     ) : (
-                    <CheckUserExists />)
+                    <CheckUserExists />)}
                   </PageWrapper>
                 }
               />
