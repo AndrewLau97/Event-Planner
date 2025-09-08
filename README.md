@@ -91,4 +91,5 @@ Once the repo is open, please run the following:
 - Triggers
   - Create a trigger that links Supabase Authentication login with the User Profiles tables, so a new user automatically gets a profile row when signing up
 - Storage
-  - Create two Buckets in the Supabase Storage, creating the necessary folders to store event banners and profile picturess
+  - Create two Buckets in the Supabase Storage, creating the necessary folders to store event banners and profile pictures
+- After setup, create your profile. Then, in Supabase, change your role to admin to grant yourself administrative privileges on the website.
